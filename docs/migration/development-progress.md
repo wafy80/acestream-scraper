@@ -4,76 +4,75 @@ This document tracks the implementation progress of the Acestream Scraper rewrit
 
 ## Project Status
 
-**Current Phase**: Phase 1 - Setup and Base Structure  
+**Current Phase**: Phase 2 - Core Scraping Engine  
 **Last Updated**: June 1, 2025
 
 ## Completed Items
 
 ### Phase 1: Setup and Base Structure
-- [ ] Create `v2/` directory structure
-- [ ] Set up FastAPI application skeleton 
-- [ ] Configure dependency management
-- [ ] Set up React application with TypeScript
-- [ ] Configure Docker for development
-- [ ] Database schema design
-- [ ] Core utilities
+- [x] Create `v2/` directory structure
+- [x] Set up FastAPI application skeleton 
+- [x] Configure dependency management
+- [x] Set up React application (with TypeScript)
+- [x] Configure Docker for development
+- [x] Database schema design
+- [x] Core utilities
 
 ### Phase 2: Core Scraping Engine
 
 #### 2.1 Scraper Base Implementation
-- [ ] Port the `BaseScraper` abstract class
-- [ ] Implement common functionality for acestream link extraction
-- [ ] Port regex patterns and extraction logic
-- [ ] Implement the scraper factory pattern
+- [x] Port the `BaseScraper` abstract class
+- [x] Implement common functionality for acestream link extraction
+- [x] Port regex patterns and extraction logic
+- [x] Implement the scraper factory pattern
 
 #### 2.2 HTTP Scraper
-- [ ] Port the `HTTPScraper` implementation
-- [ ] Ensure identical behavior for web scraping functionality
-- [ ] Implement error handling and retry logic
-- [ ] Ensure proper M3U file detection and processing
+- [x] Port the `HTTPScraper` implementation
+- [x] Ensure identical behavior for web scraping functionality
+- [x] Implement error handling and retry logic
+- [x] Ensure proper M3U file detection and processing
 
 #### 2.3 ZeroNet Scraper
-- [ ] Port the `ZeronetScraper` implementation
-- [ ] Ensure correct integration with the ZeroNet service
-- [ ] Implement specialized content extraction for ZeroNet pages
-- [ ] Maintain advanced parsing for various data formats
+- [x] Port the `ZeronetScraper` implementation
+- [x] Ensure correct integration with the ZeroNet service
+- [x] Implement specialized content extraction for ZeroNet pages
+- [x] Maintain advanced parsing for various data formats
 
 #### 2.4 Content Extraction Logic
-- [ ] Port specialized extraction methods for acestream links
-- [ ] Implement parsing logic for various page structures
-- [ ] Ensure all edge cases are handled properly
-- [ ] Port channel name cleaning and metadata extraction
+- [x] Port specialized extraction methods for acestream links
+- [x] Implement parsing logic for various page structures
+- [x] Ensure all edge cases are handled properly
+- [x] Port channel name cleaning and metadata extraction
 
 ### Phase 3: Core Domain Models and Services
 
 #### 3.1 Channel Management
-- [ ] SQLAlchemy model for `AcestreamChannel`
-- [ ] Pydantic DTOs for channels
-- [ ] Channel repository implementation
-- [ ] Channel service implementation
-- [ ] Integration with scrapers
-- [ ] API controllers for channel management
-  - [ ] `GET /api/v1/channels/`
-  - [ ] `GET /api/v1/channels/{id}`
-  - [ ] `POST /api/v1/channels/`
-  - [ ] `PUT /api/v1/channels/{id}`
-  - [ ] `DELETE /api/v1/channels/{id}`
-  - [ ] `POST /api/v1/channels/{id}/check_status`
-  - [ ] `POST /api/v1/channels/check_status_all`
+- [x] SQLAlchemy model for `AcestreamChannel`
+- [x] Pydantic DTOs for channels
+- [x] Channel repository implementation
+- [x] Channel service implementation
+- [x] Integration with scrapers
+- [x] API controllers for channel management
+  - [x] `GET /api/channels/`
+  - [x] `GET /api/channels/{id}`
+  - [ ] `POST /api/channels/`
+  - [ ] `PUT /api/channels/{id}`
+  - [ ] `DELETE /api/channels/{id}`
+  - [ ] `POST /api/channels/{id}/check_status`
+  - [ ] `POST /api/channels/check_status_all`
 
 #### 3.2 URL Management and Scraping
-- [ ] SQLAlchemy model for `ScrapedURL`
-- [ ] Pydantic DTOs for URLs
-- [ ] URL repository implementation
-- [ ] URL service implementation
-- [ ] Connect scrapers to URL management
-- [ ] API controllers for URL management
-  - [ ] `GET /api/v1/urls/`
-  - [ ] `POST /api/v1/urls/`
-  - [ ] `GET /api/v1/urls/{id}`
-  - [ ] `PUT /api/v1/urls/{id}`
-  - [ ] `DELETE /api/v1/urls/{id}`
-  - [ ] `POST /api/v1/urls/{id}/refresh`
+- [x] SQLAlchemy model for `ScrapedURL`
+- [x] Pydantic DTOs for URLs
+- [x] URL service implementation
+- [x] Connect scrapers to URL management
+- [x] API controllers for URL management
+  - [x] `GET /api/scrapers/urls`
+  - [ ] `POST /api/scrapers/urls`
+  - [ ] `GET /api/scrapers/urls/{id}`
+  - [ ] `PUT /api/scrapers/urls/{id}`
+  - [ ] `DELETE /api/scrapers/urls/{id}`
+  - [x] `POST /api/scrapers/scrape`
 
 #### 2.3 TV Channels Management
 - [ ] SQLAlchemy model for `TVChannel`
@@ -162,9 +161,9 @@ This document tracks the implementation progress of the Acestream Scraper rewrit
 ### Phase 4: Frontend Implementation
 
 #### 4.1 Core UI Components
-- [ ] Design system setup
-- [ ] Layout components
-- [ ] Navigation
+- [x] Design system setup
+- [x] Layout components
+- [x] Navigation
 - [ ] Common utilities and hooks
 
 #### 4.2 Channel Management UI
@@ -200,11 +199,11 @@ This document tracks the implementation progress of the Acestream Scraper rewrit
 
 ## Next Steps
 
-1. Create `v2/` directory structure
-2. Set up FastAPI application skeleton
-3. Implement core models with SQLAlchemy 2.0 style and type annotations
-4. Implement base repository and service patterns
-5. Begin implementing the channel management API
+1. Complete the remaining API endpoints for channel management
+2. Implement the TV Channel models and endpoints
+3. Develop the frontend components using TypeScript
+4. Implement the playlist generation service
+5. Add EPG integration functionality
 
 ## Technical Notes
 
